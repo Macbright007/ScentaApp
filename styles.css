@@ -8,6 +8,7 @@
 }
 
 header {
+  padding-top: 3rem;
   height: 100vh;
   /* background-image: url("./images/banner.jpg"); */
   background-image: url("https://s.yimg.com/ny/api/res/1.2/Jlo4_xGdu2HvxM7PuyyPLQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyNDI7aD02OTk-/https://media.zenfs.com/en/momtastic_536/7f8ca01cc88e6829cf18729e7fb3a73b");
@@ -22,7 +23,12 @@ header {
   margin: auto;
 }
 nav {
+  background-color: #170f04;
   padding-block: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 4;
 }
 
 .innerNav {
@@ -303,7 +309,43 @@ nav {
   }
 
   .navRight {
-    display: none;
+    /* display: none; */
+    position: absolute;
+    width: 15%;
+    padding: 1.4rem 1rem;
+    top: 3rem;
+    right: 3px;
+    z-index: 1;
+    background-color: #0a0701;
+    opacity: 0.97;
+    border-bottom: 4px solid #fff;
+    transform: translate(100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  }
+
+  .navIcons {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    border-left: none;
+  }
+
+  .navIcons > a {
+    font-size: 1rem;
+  }
+
+  .navIcons > a > span {
+    background-color: #4a3107;
+    font-size: 10px;
+    top: 9px;
+    right: -5px;
+    width: 14px;
+    height: 14px;
+  }
+
+  #toggle:checked + .navRight {
+    display: block;
+    transform: none;
   }
 
   .banner {
@@ -316,7 +358,7 @@ nav {
 
   .giftIdeas {
     border-inline: 5px solid #9e7939;
-    width: 430px;
+    width: 350px;
     overflow-x: scroll;
     padding-inline: 1rem;
     /* flex-direction: column; */
@@ -349,7 +391,7 @@ nav {
     width: 100%;
   }
 
-  .itemDisplay{
+  .itemDisplay {
     width: 350px;
     grid-template-columns: 1fr;
   }
