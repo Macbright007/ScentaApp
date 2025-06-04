@@ -41,6 +41,11 @@ nav {
   font-weight: 400;
 }
 
+.hamburger,
+#toggle {
+  display: none;
+}
+
 .navIcons {
   display: flex;
   gap: 0.7rem;
@@ -209,7 +214,7 @@ nav {
   font-size: 8px;
   text-transform: capitalize;
   background-color: #e32e41;
- padding: 2px;
+  padding: 2px;
   rotate: 40deg;
   width: 60px;
   color: #fff;
@@ -247,37 +252,105 @@ nav {
   text-decoration: line-through;
 }
 
-
 /* styling for items section */
-.itemSec{
-    background-image: url("./images/bgg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    margin-top: 3rem;
+.itemSec {
+  background-image: url("./images/bgg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-top: 3rem;
 }
 
-.itemDisplay{
-    padding-block: 2rem;
-    display: grid;
-    gap: 1rem;
-    /* grid-template-columns: 1fr 1fr 1fr; */
-    grid-template-columns: repeat(3, 1fr);
-    color: #fff;
+.itemDisplay {
+  padding-block: 2rem;
+  display: grid;
+  gap: 1rem;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  grid-template-columns: repeat(3, 1fr);
+  color: #fff;
 }
 
-.itemCard{
-    border: 1px solid #fff;
-    height: 40vh;
-    padding: 2rem;
+.itemCard {
+  border: 1px solid #fff;
+  height: 40vh;
+  padding: 2rem;
 }
 
-.itemCard > h1{
-    text-transform: capitalize;
-    font-weight: 500;
-    font-size: 20px;
+.itemCard > h1 {
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 20px;
 }
-.itemCard > h5{
-    font-weight: 500;
-    font-size: 10px;
+.itemCard > h5 {
+  font-weight: 500;
+  font-size: 10px;
+}
+
+/* responsive design code with Media Query */
+@media (min-width: 320px) and (max-width: 560px) {
+  .innerNav > span {
+    display: none;
+  }
+
+  .innerNav > h1 {
+    margin-left: 1rem;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+
+  .navRight {
+    display: none;
+  }
+
+  .banner {
+    width: 350px;
+  }
+
+  .banner > p {
+    width: 100%;
+  }
+
+  .giftIdeas {
+    border-inline: 5px solid #9e7939;
+    width: 430px;
+    overflow-x: scroll;
+    padding-inline: 1rem;
+    /* flex-direction: column; */
+  }
+
+  .giftIdeasContent {
+    flex: 1;
+  }
+
+  .giftIdeasContent > p {
+    width: 300px;
+  }
+
+  .trending {
+    max-width: 350px;
+  }
+
+  .trendingTabs {
+    width: 100%;
+    flex-direction: column;
+    align-items: start;
+    gap: 3rem;
+  }
+
+  .trendingCardWrapper {
+    flex-direction: column;
+  }
+
+  .trendingCard {
+    width: 100%;
+  }
+
+  .itemDisplay{
+    width: 350px;
+    grid-template-columns: 1fr;
+  }
 }
